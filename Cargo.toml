@@ -1,0 +1,11 @@
+[package]
+name = "primetools"
+version = "0.1.0"
+authors = ["Nathan Henrie <nate@n8henrie.com>"]
+edition = "2018"
+description = "A simple implementation of a prime iterator and sieve."
+repository = "https://github.com/n8henrie/primetools-rust"
+readme = "README.md"
+license = "MIT"
+
+[dependencies]
