@@ -1,3 +1,13 @@
+/// A simple prime sieve up to (but not including) `below`. Wraps a `Vec`, allowing convenience
+/// methods on `.0`.
+///
+/// # Examples
+///
+/// ```
+/// use primetools::PrimeSieve;
+///
+/// let primes = PrimeSieve::new(7);
+/// assert_eq!(primes.0, [2, 3, 5]);
 #[derive(Debug)]
 pub struct PrimeSieve(pub Vec<u32>);
 
@@ -25,6 +35,20 @@ impl PrimeSieve {
     }
 }
 
+/// A simple prime iterator, optionally up to (but not including) `below`; infinite if `below` is
+/// `None`.
+///
+/// # Examples
+///
+/// ```
+/// use primetools::PrimeGen;
+///
+/// let mut primes = PrimeGen::new(None);
+/// assert_eq!(primes.next(), Some(2));
+/// assert_eq!(primes.next(), Some(3));
+/// let primes = PrimeGen::new(Some(7)).collect::<Vec<_>>();
+/// assert_eq!(primes, [2, 3, 5]);
+/// ```
 #[derive(Debug)]
 pub struct PrimeGen {
     below: Option<u32>,
